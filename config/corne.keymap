@@ -14,6 +14,22 @@
 #define NUMBERS_L 3
 
 / {
+    macros {
+        maccopy: macrocopy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp C>;
+            label = "MACROCOPY";
+        };
+
+        macpaste: macpaste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp V>;
+            label = "MACPASTE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -30,10 +46,10 @@
         symbols_layer {
             label = "SYMB";
             bindings = <
-&kp ESC    &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT        &kp CARET  &kp AMPS   &kp STAR       &kp MINUS  &none     &kp BSPC
-&kp GRAVE  &none     &none   &none     &none      &kp PLUS         &kp HOME   &kp LBRC   &kp RBRC       &kp END    &kp BSLH  &kp RET
-&kp TAB    &none     &none   &none     &none      &kp MINUS        &kp LBKT   &kp LPAR   &kp RPAR       &kp RBKT   &none     &to ARROWS_L
-                             &kp LCMD  &kp LSHFT  &to DEFAULT_L    &none      &kp SPACE  &to NUMBERS_L
+&kp ESC     &kp F1  &kp F2    &kp F3     &kp F4  &kp F5       &kp F6     &kp F7  &kp F8    &kp F9  &kp F10        &kp F11
+&kp TAB     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5       &kp N6     &kp N7  &kp N8    &kp N9  &kp N0         &kp F12
+&kp LSHIFT  &trans  &maccopy  &macpaste  &trans  &trans       &trans     &trans  &trans    &trans  &kp BACKSLASH  &trans
+                              &kp LALT   &trans  &kp SPACE    &kp ENTER  &trans  &kp LGUI
             >;
         };
 
