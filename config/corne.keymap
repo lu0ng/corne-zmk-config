@@ -14,22 +14,6 @@
 #define NUMBERS_L 3
 
 / {
-    macros {
-        maccopy: macrocopy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LGUI &kp C>;
-            label = "MACROCOPY";
-        };
-
-        macpaste: macpaste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LGUI &kp V>;
-            label = "MACPASTE";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -37,8 +21,8 @@
             label = "DEF";
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp KP_ENTER
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp KP_ENTER
                          &kp LALT  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp LGUI
             >;
         };
@@ -46,20 +30,20 @@
         symbols_layer {
             label = "SYMB";
             bindings = <
-&kp ESC     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5       &kp N6     &kp N7     &kp N8     &kp N9  &kp N0         &kp BACKSPACE
-&kp TAB     &kp F1  &kp F2    &kp F3     &kp F4  &kp F5       &kp F6     &kp F7     &kp F8     &kp F9  &kp F10        &kp F11
-&kp LSHIFT  &trans  &maccopy  &macpaste  &trans  &trans       &kp MINUS  &kp EQUAL  &kp GRAVE  &trans  &kp BACKSLASH  &kp F12
-                              &kp LALT   &trans  &kp SPACE    &kp ENTER  &trans     &kp LGUI
+&kp ESC     &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6     &kp N7  &kp N8    &kp N9  &kp N0   &kp BACKSPACE
+&kp TAB     &kp F1  &kp F2  &kp F3    &kp F4  &kp F5       &kp F6     &kp F7  &kp F8    &kp F9  &kp F10  &kp F11
+&kp LSHIFT  &trans  &trans  &trans    &trans  &trans       &trans     &trans  &trans    &trans  &trans   &kp F12
+                            &kp LALT  &trans  &kp SPACE    &kp ENTER  &trans  &kp LGUI
             >;
         };
 
         arrows_layer {
             label = "NAV";
             bindings = <
-&kp ESC    &trans  &trans  &kp MINUS       &kp EQUAL  &kp GRAVE    &kp LEFT_BRACE  &kp RIGHT_BRACE  &none      &kp LPAR   &kp RPAR          &kp PIPE
-&kp TAB    &trans  &trans  &kp UNDERSCORE  &kp PLUS   &kp TILDE    &kp LEFT        &kp DOWN         &kp UP     &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp LSHFT  &trans  &trans  &trans          &trans     &trans       &trans          &kp PG_DN        &kp PG_UP  &trans     &kp COLON         &kp DOUBLE_QUOTES
-                           &kp LALT        &trans     &kp SPACE    &kp ENTER       &trans           &kp LGUI
+&kp ESC    &trans  &trans  &kp GRAVE  &kp MINUS       &kp EQUAL    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp UP    &kp LPAR   &kp RPAR          &kp BACKSLASH
+&kp LCTRL  &trans  &trans  &kp TILDE  &kp UNDERSCORE  &kp PLUS     &kp PG_UP       &kp LEFT         &kp DOWN  &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp LSHFT  &trans  &trans  &trans     &trans          &kp GLOBE    &kp PG_DN       &trans           &trans    &trans     &trans            &trans
+                           &kp LALT   &trans          &kp SPACE    &kp ENTER       &trans           &kp LGUI
             >;
         };
 
